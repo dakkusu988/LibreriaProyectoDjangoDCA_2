@@ -41,8 +41,6 @@ class Detalles(DetailView):
     model = Libreria
     template_name = 'libreria/detalles.html'
 
-
-
 class Editar(View):
     bookEdit_template = 'libreria/editar.html'
     
