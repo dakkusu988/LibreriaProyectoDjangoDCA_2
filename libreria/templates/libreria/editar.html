@@ -14,7 +14,7 @@
         <form action="{% url 'editar' pk=book.pk %}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Libro Editado</button>
+            <button type="submit">Guardar Libro Editado</button>
         </form>
 
     </body> 
