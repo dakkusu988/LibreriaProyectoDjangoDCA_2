@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detalles</title>
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
+    </head>
+
+    <body style="padding: 20px;">
+
+        <h2>Detalles del Libro</h2>
+        <article>
+            <p><strong>Título:</strong> {{ book.title }}</p>
+            <p><strong>Autor:</strong> {{ book.author }}</p>
+            <p><strong>Descripción:</strong> {{ book.description }}</p>
+            <p><strong>Rating:</strong> {{ book.rating }}</p>
+            <a href="{% url 'editar' pk=book.pk %}" role="button">Editar libro</a>
+        </article>
+
+    </body> 
+</html>
