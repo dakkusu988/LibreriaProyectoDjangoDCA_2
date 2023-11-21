@@ -12,6 +12,8 @@
 
         <h1>Listado de Libros</h1>
 
+        <a role="button" href="{% url 'añadir' %}"> Añadir un Libro Nuevo </a>
+
         {% for book in object_list %}
             <article>    
 
@@ -20,8 +22,6 @@
 
             </article>
         {% endfor %}
-
-        <a role="button" href="{% url 'añadir' %}"> Añadir un Libro Nuevo </a>
     
     </body>
 </html>

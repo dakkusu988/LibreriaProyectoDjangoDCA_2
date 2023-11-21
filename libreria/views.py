@@ -3,6 +3,8 @@ from django.views import View
 from .forms import LibreriaForm
 from .models import Libreria
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import UpdateView
+from django.urls import reverse
 
 """
 class Listado(View):
@@ -41,6 +43,7 @@ class Detalles(DetailView):
     model = Libreria
     template_name = 'libreria/detalles.html'
 
+"""
 class Editar(View):
     bookEdit_template = 'libreria/editar.html'
     
@@ -57,3 +60,13 @@ class Editar(View):
             book.save()
             return redirect('listado')
         return render(request, self.bookEdit_template , {'book': book, 'form': form})
+"""    
+
+class Editar(UpdateView):
+    model = Libreria
+    fields = ['title', 'author', 'rating']
+    template_name = "libreria/editar.html"
+
+    # Puedes redirigir a una vista específica usando reverse
+    def get_success_url(self):
+        return reverse('listado') 
