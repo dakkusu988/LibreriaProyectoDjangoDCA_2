@@ -75,6 +75,7 @@ class Editar(UpdateView):
     
 class Borrar(DeleteView):
     model = Libreria
+    template_name = "libreria/borrar.html"
     success_url = reverse_lazy("listado")
 
     # Mensaje de éxito al borrar

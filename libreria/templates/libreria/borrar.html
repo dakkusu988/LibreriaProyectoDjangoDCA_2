@@ -11,16 +11,14 @@
 
         <h1>Eliminar {{ object.title }}</h1>
 
-        <form action="{% url 'borrar' pk=object.pk %}">
+        <form action="" method="post">
             
             {% csrf_token %}
             
             <p>Estás seguro  de que quieres eliminar este libro.</p>
             <p>Esta acción NO TIENE vuelta atrás.</p>
-            
-            {{ form }}
 
-            <input type="submit" value="eliminar">
+            <input type="submit" value="Borrar Libro">
         
         </form>
 
