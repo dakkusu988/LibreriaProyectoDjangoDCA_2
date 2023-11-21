@@ -5,6 +5,8 @@ from .models import Libreria
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView
 from django.urls import reverse
+from django.urls import reverse_lazy
+from django.views.generic.edit import DeleteView
 
 """
 class Listado(View):
@@ -69,4 +71,12 @@ class Editar(UpdateView):
 
     # Puedes redirigir a una vista específica usando reverse
     def get_success_url(self):
-        return reverse('listado') 
+        return reverse('listado')
+    
+class Borrar(DeleteView):
+    model = Libreria
+    success_url = reverse_lazy("listado")
+
+    # Mensaje de éxito al borrar
+    def get_success_message(self):
+        return "El libro ha sido eliminado exitosamente"

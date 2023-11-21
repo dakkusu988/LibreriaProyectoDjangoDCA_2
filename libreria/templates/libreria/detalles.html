@@ -16,7 +16,8 @@
             <p><strong>Autor:</strong> {{ object.author }}</p>
             <p><strong>Rating:</strong> {{ object.rating }}</p>
             <a href="{% url 'listado' %}" role="button">Volver al Listado</a>
-            <a href="{% url 'editar' pk=object.pk %}" role="button">Editar libro</a>
+            <a href="{% url 'editar' pk=object.pk %}" role="button">Editar</a>
+            <a href="{% url 'borrar' pk=object.pk %}" role="button">Borrar</a>
         </article>
 
     </body> 
